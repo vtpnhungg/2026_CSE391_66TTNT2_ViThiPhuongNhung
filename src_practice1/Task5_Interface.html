@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HR Management</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f6f8;
+    }
+
+    .navbar {
+        background: #222;
+        color: white;
+        padding: 12px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar a {
+        color: white;
+        margin-left: 15px;
+        text-decoration: none;
+    }
+    .search-box input {
+        gap: 5px;
+        padding: 5px;
+    }
+
+ 
+    .container {
+        padding: 20px;
+    }
+    h2 {
+        margin-bottom: 10px;
+    }
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+
+    .btn {
+        padding: 5px 10px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    .btn-search {
+        background: #000000;
+        border: 1px solid #ffffff;
+        float: right;
+    }
+    .btn-add {
+        background: #00a5f8;
+        float: right;
+    }
+    .btn-edit {
+        background: orange;
+    }
+    .btn-delete {
+        background: crimson;
+    }
+    a{
+        text-decoration:none;
+    }
+
+</style>
+</head>
+<body>
+
+
+<div class="navbar">
+    <div>
+        <strong>HR Management</strong>
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <button class="btn btn-search">Search</button>
+    </div>
+</div>
+
+
+<div class="container">
+    <h2>Employee
+        <a href="Task5_form_add.html">
+        <button class="btn btn-add">+ Add</button>
+    </h2>
+
+    <table>
+        <tr>
+            <th>ID</th><th>Name</th><th>Email</th>
+            <th>Phone</th><th>Position</th><th>Action</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Fatima Beatriz</td><td>fatima beatriz@gmail.com</td>
+            <td>0985674321</td><td>Staff</td>
+            <td>
+                <button class="btn btn-edit">Edit</button>
+                <button class="btn btn-delete">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Gabriel Hanna</td><td>gabriel hanna@gmail.com</td>
+            <td>0353674231</td><td>Staff</td>
+            <td>
+                <button class="btn btn-edit">Edit</button>
+                <button class="btn btn-delete">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Charles Diya</td><td>charles diya@gmail.com</td>
+            <td>0347658833</td><td>Staff</td>
+            <td>
+                <button class="btn btn-edit">Edit</button>
+                <button class="btn btn-delete">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Frank Lamdo</td><td>frank lamdo@gmail.com</td>
+            <td>0347658833</td><td>Manager</td>
+            <td>
+                <button class="btn btn-edit">Edit</button>
+                <button class="btn btn-delete">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Louis Tom</td><td>louis tom@gmail.com</td>
+            <td>0347658833</td><td>Staff</td>
+            <td>
+                <button class="btn btn-edit">Edit</button>
+                <button class="btn btn-delete">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
