@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Transcript</title>
+    <link rel ="stylesheet" href="css/student_transcript.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Student Transcript</h2>
+        <div class="form-section">
+            <input type="text" id="studentName" placeholder="Họ và Tên">
+            <p id="nameError" class="error"></p>
+            <input type="number" id="studentScore" placeholder="Điểm (0-10)">
+            <p id="scoreError" class="error"></p>
+            <button id="btn-add">Thêm</button>
+        </div>
+        <table class="data-table" id="studentTable">
+        <thead>
+           <tr>
+               <th>STT</th>
+               <th>Họ Tên</th>
+               <th>Điểm</th>
+               <th>Xếp loại</th>
+               <th>Thao tác</th>
+           </tr>
+    
+        </thead>
+        <tbody id = "tableBody">
+        </tbody>
+        </table>
+        <div class="status">
+            <p id="total">Tổng số sinh viên: 0</p>
+            <p id="avg">Điểm trung bình: 0</p>
+        </div>
+    </div>
+    <script src="js/student_transcript.js"></script>
+</body>
+</html>
