@@ -2,36 +2,26 @@
 const inputStudentName = document.getElementById("studentName");
 const inputStudentScore = document.getElementById("studentScore");
 const btnAddStudent = document.getElementById("btn-add");
-
 const tableBody = document.getElementById("tableBody");
 const totalStudents = document.getElementById("total");
 const avgScore = document.getElementById("avg");
-
 // Bước 2: Sự kiện thêm sinh viên
 btnAddStudent.addEventListener("click", function () {
     const studentName = inputStudentName.value.trim();
     const studentScore = parseFloat(inputStudentScore.value);
     let isValid = true;
 
-    if (!studentName) {
-        nameError.textContent = "Vui lòng nhập Họ và Tên";
-        isValid = false;
-    } else {
-        nameError.textContent = "";
+    if (!studentName||!studentScore) {
+        alert("Vui lòng nhập đầy đủ thông tin!");
+        isValid=false;
     }
-
-    if (!studentScore) {
-        scoreError.textContent = "Vui lòng nhập điểm";
-        isValid = false;
-    } else if (studentScore < 0 || studentScore > 10) {
-        scoreError.textContent = "Điểm phải từ 0 đến 10";
-        isValid = false;
-    } else {
-        scoreError.textContent = "";
+    else if (studentScore < 0 || studentScore > 10) {
+        alert("Vui lòng nhập lại điểm trong khoảng từ 0 đến 10");
+        isValid=false;
+    } 
+    if(!isValid){
+        return;
     }
-
-    if (!isValid) return;
-
     // Tạo dòng mới
     const tr = document.createElement("tr");
     const stt = document.createElement("td");
@@ -41,18 +31,21 @@ btnAddStudent.addEventListener("click", function () {
     const score = document.createElement("td");
     score.textContent = studentScore;
     const rank = document.createElement("td");
-
     let r = "";
     if (studentScore >= 8.5) {
         r = "Giỏi";
-    } else if (studentScore >= 6.5) {
+    } else if (studentScore >= 7) {
         r = "Khá";
     } else if (studentScore >= 5) {
         r = "Trung bình";
+
     } else {
         r = "Yếu";
     }
     rank.textContent = r;
+    if(studentScore<5){
+        tr.style.backgroundColor = "yellow";
+    }
     // Cột hành động
     const action = document.createElement("td");
     const deleteBtn = document.createElement("button");
