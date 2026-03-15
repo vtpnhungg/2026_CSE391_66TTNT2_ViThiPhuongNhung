@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đăng kí</title>
+    <link rel ="stylesheet" href="css/form.css">
+</head>
+<body>
+    <div class="container">
+        <form id="registerForm">
+            <h2>Đăng ký tài khoản</h2>
+
+            <label>Họ và tên</label>
+            <input type="text" id="fullname" placeholder="Họ và tên">
+            <div class="error" id="fullnameError"></div>
+
+            <label>Email</label>
+            <input type="text" id="email" placeholder="name@domai.com">
+            <div class="error" id="emailError"></div>
+
+            <label>Số điện thoại</label>
+            <input type="text" id="phone">
+            <div class="error" id="phoneError"></div>
+
+            <label>Mật khẩu</label>
+            <input type="password" id="password">
+            <div class="error" id="passwordError"></div>
+
+            <label>Xác nhận mật khẩu</label>
+            <input type="password" id="confirm">
+            <div class="error" id="confirmError"></div>
+
+            <p>Giới tính</p>
+            <input type="radio" name="gender" value="Nam"> Nam
+            <input type="radio" name="gender" value="Nữ"> Nữ
+            <input type="radio" name="gender" value="Khác"> Khác
+            <div class="error" id="genderError"></div>
+            <br><br>
+            <input type="checkbox" id="terms"> Tôi đồng ý điều khoản
+            <div class="error" id="termsError"></div>
+            <br><br>
+            <button type="submit">Đăng ký</button>
+        </form>
+    <div id="successMessage"></div>
+</div>
+
+<script src="js/form.js"></script>
+
+</body>
+</html>

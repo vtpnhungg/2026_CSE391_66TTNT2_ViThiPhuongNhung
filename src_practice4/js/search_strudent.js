@@ -5,6 +5,11 @@ const btnAddStudent = document.getElementById("btn-add");
 const tableBody = document.getElementById("tableBody");
 const totalStudents = document.getElementById("total");
 const avgScore = document.getElementById("avg");
+//thêm sự kiện cho nút search
+const inputSearch = document.getElementById("searchStudent");
+
+
+
 // nhấn enter
 inputStudentScore.addEventListener("keydown", function(e){
     if(e.key=="Enter"){
@@ -103,6 +108,66 @@ function updateStatistics() {
 }
 
 
+inputSearch.addEventListener("input", function () {
+    const keyword = inputSearch.value.toLowerCase().trim();
+    const rows = tableBody.querySelectorAll("tr");
+    let found = false;
+    rows.forEach(row => {
+        if (row.id === "noResult") return; // bỏ qua dòng thông báo
+        const name = row.cells[1].textContent.toLowerCase();
+        if (name.includes(keyword)) {
+            row.style.display = "";
+            found = true;
+        } else {
+            row.style.display = "none";
+        }
+    });
+    let noResult = document.getElementById("noResult");
+    if (!found && rows.length > 0) {
+        if (!noResult) {
+            const tr = document.createElement("tr");
+            tr.id = "noResult";
+            const td = document.createElement("td");
+            td.colSpan = 5;
+            td.textContent = "Không có kết quả";
+            td.style.textAlign = "center";
+            tr.appendChild(td);
+            tableBody.appendChild(tr);
+        }
+    } else {
+        if (noResult) {
+            noResult.remove();
+        }
+    }
+});
+const filterRank = document.getElementById("filterRank");
+filterRank.addEventListener("change", function () {
+    const selected = filterRank.value;
+    const rows = tableBody.querySelectorAll("tr");
+    rows.forEach(row => {
+        if (row.id === "noResult") return;
+        const rank = row.cells[3].textContent;
+        if (selected === "all" || rank === selected) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+});
+let sortAsc = true;
+const sortScore = document.getElementById("sortScore");
+sortScore.addEventListener("click", function () {
+    const rows = Array.from(tableBody.querySelectorAll("tr"));
+    rows.sort((a, b) => {
+        const scoreA = parseFloat(a.cells[2].textContent);
+        const scoreB = parseFloat(b.cells[2].textContent);
+        return sortAsc ? scoreA - scoreB : scoreB - scoreA;
+    });
+    sortAsc = !sortAsc;
+    tableBody.innerHTML = "";
+    rows.forEach(row => tableBody.appendChild(row));
+    updateStudentOrder();
+});
 
 
 

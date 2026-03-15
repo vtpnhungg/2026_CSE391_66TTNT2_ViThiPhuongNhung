@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: gray;
+    padding: 40px 35px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.container{
+    background-color: white;
+    border-radius: 8px;
+    width:80%;
+    padding: 35px 40px;
+}
+.container h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+}
+#orderForm{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+#orderForm input[type="radio"] + label{
+    margin-right:15px;
+}
+.error{
+    color:red;
+    font-size:14px;
+}
+#confirmBox{
+    display:none;
+    border:1px solid #ccc;
+    padding:15px;
+    margin-top:20px;
+    background:#f5f5f5;
+}
+.counter{
+    font-size:13px;
+}
+.red{
+    color:red;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Transcript</title>
+    <link rel ="stylesheet" href="css/search_student.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search">
+        <input type="text" id="searchStudent" placeholder="Tìm kiếm">
+        <select id="filterRank">
+            <option value="all">Tất cả</option>
+            <option value="Giỏi">Giỏi</option>
+            <option value="Khá">Khá</option>
+            <option value="Trung bình">Trung bình</option>
+            <option value="Yếu">Yếu</option>
+        </select>
+        </div>
+        <div class="form-section">
+            <input type="text" id="studentName" placeholder="Họ và Tên">
+            <input type="number" id="studentScore" placeholder="Điểm (0-10)">
+            <button id="btn-add">Thêm</button>
+        </div>
+        <table class="data-table" id="studentTable">
+        <thead>
+           <tr>
+               <th>STT</th>
+               <th>Họ Tên</th>
+               <th id="sortScore">Điểm</th> 
+               <th>Xếp loại</th>
+               <th>Thao tác</th>
+           </tr>
+        </thead>
+        <tbody id = "tableBody">
+        </tbody>
+        </table>
+        <div class="status">
+            <p id="total">Tổng số sinh viên: 0</p>
+            <p id="avg">Điểm trung bình: 0</p>
+        </div>
+    </div>
+    <script src="js/search_strudent.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đặt Hàng</title>
+    <link rel="stylesheet" href="css/form_order.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Form Đặt Hàng</h2>
+        <form id="orderForm">
+            <label>Tên sản phẩm</label><br>
+            <select id="product">
+            <option value="">-- Chọn sản phẩm --</option>
+            <option value="ao">Áo</option>
+            <option value="quan">Quần</option>
+            <option value="giay">Giày</option>
+            </select>
+            <div class="error" id="productError"></div>
+            <br><br>
+            <label>Số lượng</label><br>
+            <input type="number" id="quantity" min="1" max="99">
+            <div class="error" id="quantityError"></div>
+            <br><br>
+            <label>Ngày giao hàng</label><br>
+            <input type="date" id="delivery">
+            <div class="error" id="dateError"></div>
+            <br><br>
+            <label>Địa chỉ giao</label><br>
+            <textarea id="address"></textarea>
+            <div class="error" id="addressError"></div>
+            <br><br>
+            <label>Ghi chú</label><br>
+            <textarea id="note"></textarea>
+            <div class="counter" id="noteCount">0/200</div>
+            <div class="error" id="noteError"></div>
+            <br><br>
+            <label>Phương thức thanh toán</label><br>
+            <input type="radio" name="payment" value="cod"> COD
+            <input type="radio" name="payment" value="bank"> Chuyển khoản
+            <input type="radio" name="payment" value="ewallet"> Ví điện tử
+            <div class="error" id="paymentError"></div>
+            <br><br>
+            <h3>Tổng tiền: <span id="total">0</span> VNĐ</h3>
+            <button type="submit">Đặt hàng</button>
+        </form>
+        <div id="confirmBox">
+            <h3>Xác nhận đơn hàng</h3>
+            <p id="summary"></p>
+            <button id="confirmBtn">Xác nhận</button>
+            <button id="cancelBtn">Hủy</button>
+        </div>
+    </div>
+    <script src="js/form_order.js"></script>
+    </body>
+</html>
